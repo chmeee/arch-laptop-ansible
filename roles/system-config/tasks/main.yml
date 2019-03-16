@@ -1,0 +1,15 @@
+---
+# tasks file for system-config
+- name: install system packages
+  pacman: 
+    name: "{{ item }}"
+    state: present
+  loop:
+    - acpi
+    - at
+    - bluez
+    - bluez-firmware
+    - bluez-libs
+    - bluez-utils
+
+- name: blacklist modules

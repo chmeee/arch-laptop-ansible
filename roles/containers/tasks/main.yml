@@ -1,0 +1,32 @@
+---
+# tasks file for containers
+- name: install container packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - docker
+    - docker-compose
+    - docker-machine
+    - runc
+    - containerd
+
+- name: enable and start docker service
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: add laptop_user to the docker group
+  user:
+    name: "{{ laptop_user }}"
+    groups: docker
+    append: yes
+
+- name: add some basic images
+  docker_image:
+    name: "{{ item }}"
+  loop:
+    - centos:latest
+    - debian:latest
+    - alpine:latest

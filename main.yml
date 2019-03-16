@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - home-config
+    - base-tools
+    - window-manager
+    - terminals
+    - browsers
+    - editors
+    - virtualization
+    - containers
+    - cloud
+    - programming
+    - config-management
+    - sec-tools
+    - multimedia

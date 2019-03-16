@@ -1,0 +1,9 @@
+---
+# tasks file for terminals
+- name: install terminal packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - xterm
+    - termite 

@@ -1,0 +1,11 @@
+---
+# tasks file for config-management
+- name: install configuration management tools
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - puppet
+    - ansible
+    - salt
+    - terraform

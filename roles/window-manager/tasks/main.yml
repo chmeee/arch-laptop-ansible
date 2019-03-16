@@ -1,0 +1,33 @@
+---
+# tasks file for window-manager
+- name: install sway
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - sway
+    - grim
+
+- name: create config directory
+  file:
+    path: "/home/{{ laptop_user }}/.config/sway"
+    state: directory
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0755
+
+- name: sway config file
+  copy:
+    src: config
+    dest: .config/sway/config
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644
+
+- name: Xdefaults file
+  copy:
+    src: Xdefautls
+    dest: .Xdefaults
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644

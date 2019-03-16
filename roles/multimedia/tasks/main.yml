@@ -1,0 +1,25 @@
+---
+# tasks file for multimedia
+- name: install multimedia packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - mplayer
+    - vlc
+    - ffmpeg
+    - mencoder
+    - minidlna
+    - mp3info
+    - mpg123
+    - handbrake
+    - handbrake-cli
+    - gstreamer
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gst-plugins-bad
+    - audacity
+    - cheese
+    - cmus
+    - gimp

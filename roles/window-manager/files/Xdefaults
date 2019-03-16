@@ -1,0 +1,9 @@
+UXTerm*foreground: Green
+UXTerm*background: Black
+UXTerm*faceName: Inconsolata
+UXTerm*faceSize: 13
+UXTerm*utf8Title: true
+UXTerm*mainMenu*foreground: Black
+UXTerm*fontMenu*foreground: Black
+UXTerm*bellIsUrgent: true
+

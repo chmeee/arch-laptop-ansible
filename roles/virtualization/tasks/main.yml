@@ -1,0 +1,29 @@
+---
+# tasks file for virtualization
+- name: install virtualization packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - libvirt
+    - qemu
+    - virtualbox
+    - vagrant
+
+- name: enable and start libvirtd service
+  systemd:
+    name: libvirtd
+    state: started
+    enabled: yes
+
+- name: add laptop_user to the virtualization groups
+  user:
+    name: "{{ laptop_user }}"
+    groups: libvirt,vboxusers
+    append: yes
+
+#- name: install vagrant plugins
+#  command: "vagrant plugin install {{ item }}"
+#  loop:
+#    - vagrant-libvirt
+#    - vagrant-hostmanager

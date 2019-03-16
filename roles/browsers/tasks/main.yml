@@ -1,0 +1,12 @@
+---
+# tasks file for browsers
+- name: install official repo browsers
+  pacman: 
+    name: "{{ item }}"
+    state: present
+  loop:
+    - firefox
+    - links
+    - lynx
+    - curl
+    - wget

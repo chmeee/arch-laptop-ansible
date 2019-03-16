@@ -1,0 +1,16 @@
+---
+# tasks file for sec-tools
+- name: install security tools packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - nmap
+    - wireshark-cli
+    - wireshark-common
+    - wireshark-gtk
+    - dnstracer
+    - hashcat
+    - hashcat-utils
+    - aircrack-ng
+    - zaproxy
