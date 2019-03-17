@@ -1,2 +1,12 @@
 ---
 # tasks file for aur
+- name: clone yay PKGBUILD
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: "/home/{{ laptop_user }}/software/system/yay"
+
+- name: build and install yay pacman package
+  command: "makepkg -si --noconfirm"
+  args:
+    chdir: "/home/{{ laptop_user }}/software/system/yay"
+    creates: "/home/{{ laptop_user }}/software/system/yay/yay-*.pkg.tar.xz"
