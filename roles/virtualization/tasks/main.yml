@@ -2,13 +2,12 @@
 # tasks file for virtualization
 - name: install virtualization packages
   pacman:
-    name: "{{ item }}"
+    name:
+      - libvirt
+      - qemu
+      - virtualbox
+      - vagrant
     state: present
-  loop:
-    - libvirt
-    - qemu
-    - virtualbox
-    - vagrant
 
 - name: enable and start libvirtd service
   systemd:

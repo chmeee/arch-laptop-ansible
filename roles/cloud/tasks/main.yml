@@ -2,7 +2,6 @@
 # tasks file for cloud
 - name: install cloud cli
   pacman:
-    name: "{{ item }}"
+    name:
+      - aws-cli
     state: present
-  loop:
-    - aws-cli

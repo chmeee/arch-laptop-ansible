@@ -2,11 +2,10 @@
 # tasks file for editors
 - name: install editor packages
   pacman: 
-    name: "{{ item }}"
+    name:
+      - vim
+      - neovim
+      - code
+      - atom
+      - kakoune
     state: present
-  loop:
-    - vim
-    - neovim
-    - code
-    - atom
-    - kakoune

@@ -2,14 +2,13 @@
 # tasks file for containers
 - name: install container packages
   pacman:
-    name: "{{ item }}"
+    name:
+      - docker
+      - docker-compose
+      - docker-machine
+      - runc
+      - containerd
     state: present
-  loop:
-    - docker
-    - docker-compose
-    - docker-machine
-    - runc
-    - containerd
 
 - name: enable and start docker service
   systemd:

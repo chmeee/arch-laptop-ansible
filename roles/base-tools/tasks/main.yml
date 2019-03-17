@@ -2,19 +2,18 @@
 # tasks file for base-tools
 - name: install base tools
   pacman:
-    name: "{{ item }}"
+    name:
+      - git
+      - zathura
+      - zathura-djvu
+      - zathura-pdf-mupdf
+      - feh
+      - gcc
+      - dos2unix
+      - zip
+      - afpfs-ng
+      - bc
+      - bind-tools
+      - cowsay
+      - jq
     state: present
-  loop:
-    - git
-    - zathura
-    - zathura-djvu
-    - zathura-pdf-mupdf
-    - feh
-    - gcc
-    - dos2unix
-    - zip
-    - afpfs-ng
-    - bc
-    - bind-tools
-    - cowsay
-    - jq

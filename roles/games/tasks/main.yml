@@ -2,7 +2,6 @@
 # tasks file for games
 - name: install games
   pacman: 
-    name: "{{ item }}"
+    name:
+      - maelstrom
     state: present
-  loop:
-    - maelstrom
