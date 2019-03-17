@@ -17,3 +17,4 @@
     - bc
     - bind-tools
     - cowsay
+    - jq

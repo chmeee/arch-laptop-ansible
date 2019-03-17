@@ -3,6 +3,7 @@
   become: true
   roles:
     - home-config
+    - aur
     - base-tools
     - window-manager
     - terminals
@@ -15,3 +16,9 @@
     - config-management
     - sec-tools
     - multimedia
+    - games
+
+# aur
+# browsers
+# system-config
+# wireless

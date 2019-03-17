@@ -11,6 +11,8 @@
     - ruby-irb
     - rubygems
     - jruby
+    - ipython
+    - jupyter
     - rust
     - lua
     - autoconf

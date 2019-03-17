@@ -7,3 +7,4 @@
   loop:
     - xterm
     - termite 
+    - kitty

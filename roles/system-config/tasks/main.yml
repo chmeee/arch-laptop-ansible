@@ -11,5 +11,6 @@
     - bluez-firmware
     - bluez-libs
     - bluez-utils
+    - lsb-release
 
-- name: blacklist modules
+# - name: blacklist modules

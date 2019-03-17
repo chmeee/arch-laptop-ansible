@@ -14,3 +14,4 @@
     - hashcat-utils
     - aircrack-ng
     - zaproxy
+    - john
