@@ -18,3 +18,4 @@
     - autoconf
     - automake
     - cmake
+    - maven

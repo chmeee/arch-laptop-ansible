@@ -21,4 +21,5 @@
       - cheese
       - cmus
       - gimp
+      - mcomix
     state: present

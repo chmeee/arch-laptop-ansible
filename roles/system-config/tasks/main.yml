@@ -14,3 +14,4 @@
     - lsb-release
 
 # - name: blacklist modules
+# - name: audio config

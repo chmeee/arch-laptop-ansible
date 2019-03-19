@@ -22,3 +22,5 @@ Otherwise, if you want to install from localhost, you'll need:
 ## Configuration
 
 ## Run
+
+Run the `main.yml` playbook to configure your laptop.
