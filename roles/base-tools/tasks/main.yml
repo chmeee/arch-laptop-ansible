@@ -16,4 +16,6 @@
       - bind-tools
       - cowsay
       - jq
+      - sl
+      - lsof
     state: present
