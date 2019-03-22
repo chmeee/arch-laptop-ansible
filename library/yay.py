@@ -314,7 +314,7 @@ def install_packages(module, yay_path, state, packages, package_files):
             to_install_repos.append(package)
 
     if to_install_repos:
-        cmd = "%s --sync --noconfirm --noprogressbar --needed %s %s" % (yay_path, module.params["extra_args"], " ".join(to_install_repos))
+        cmd = "%s --noprovides --sync --noconfirm --noprogressbar --needed %s %s" % (yay_path, module.params["extra_args"], " ".join(to_install_repos))
         rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
         if rc != 0:
