@@ -2,11 +2,10 @@
 # tasks file for window-manager
 - name: install sway
   pacman:
-    name: "{{ item }}"
+    name:
+      - sway
+      - grim
     state: present
-  loop:
-    - sway
-    - grim
 
 - name: create config directory
   file:

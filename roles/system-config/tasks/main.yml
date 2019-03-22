@@ -2,16 +2,23 @@
 # tasks file for system-config
 - name: install system packages
   pacman: 
-    name: "{{ item }}"
+    name:
+      - acpi
+      - at
+      - bluez
+      - bluez-firmware
+      - bluez-libs
+      - bluez-utils
+      - lsb-release
+      - sudo
     state: present
-  loop:
-    - acpi
-    - at
-    - bluez
-    - bluez-firmware
-    - bluez-libs
-    - bluez-utils
-    - lsb-release
+
+- name: passwordless sudo
+  lineinfile:
+    path: /etc/sudoers
+    regexp: '^%wheel'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
 
 # - name: blacklist modules
 # - name: audio config
+
