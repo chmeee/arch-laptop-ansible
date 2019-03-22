@@ -9,3 +9,11 @@
       - curl
       - wget
     state: present
+
+- name: install browsers from AUR
+  yay:
+    name:
+      - google-chrome-beta
+      - google-talk-plugin
+    state: present
+  become: false

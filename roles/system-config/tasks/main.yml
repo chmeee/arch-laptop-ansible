@@ -11,6 +11,9 @@
       - bluez-utils
       - lsb-release
       - sudo
+    # - chrony
+      - iptables
+      - nftables
     state: present
 
 - name: passwordless sudo

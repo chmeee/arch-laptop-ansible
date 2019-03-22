@@ -3,6 +3,7 @@
 - name: install virtualization packages
   pacman:
     name:
+      - bridge-utils
       - libvirt
       - qemu
       - virtualbox

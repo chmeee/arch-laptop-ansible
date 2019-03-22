@@ -1,21 +1,33 @@
 ---
 # tasks file for programming
-- name: install programming languages
+- name: install programming languages and tools
   pacman:
-    name: "{{ item }}"
+    name:
+      - go
+      - clojure
+      - ruby
+      - ruby-irb
+      - rubygems
+      - jruby
+      - ipython
+      - jupyter
+      - rust
+      - lua
+      - autoconf
+      - automake
+      - cmake
+      - maven
+      - bison
+      - ghc
+      - nodejs
+      - npm
+      - yarn
     state: present
-  loop:
-    - go
-    - clojure
-    - ruby
-    - ruby-irb
-    - rubygems
-    - jruby
-    - ipython
-    - jupyter
-    - rust
-    - lua
-    - autoconf
-    - automake
-    - cmake
-    - maven
+
+- name: install programming languages and tools from AUR
+  yay:
+    name:
+      - leiningen
+      - leiningen-completions
+    state: present
+  become: false

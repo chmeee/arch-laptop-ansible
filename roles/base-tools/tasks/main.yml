@@ -7,6 +7,7 @@
       - zathura
       - zathura-djvu
       - zathura-pdf-mupdf
+      - ghostscript
       - feh
       - gcc
       - dos2unix
@@ -16,8 +17,10 @@
       - bind-tools
       - cowsay
       - jq
+      - xmlstarlet
       - sl
       - lsof
+      - sl
     state: present
 
 - name: install base tools from AUR

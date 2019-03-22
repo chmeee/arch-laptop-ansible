@@ -39,5 +39,6 @@
       - kubernetes-helm-bin
       - kops-bin
       - minikube
+      - k9s-bin
     state: present
   become: false

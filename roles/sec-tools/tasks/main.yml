@@ -2,16 +2,23 @@
 # tasks file for sec-tools
 - name: install security tools packages
   pacman:
-    name: "{{ item }}"
+    name:
+      - nmap
+      - wireshark-cli
+      - wireshark-common
+      - wireshark-gtk
+      - dnstracer
+      - hashcat
+      - hashcat-utils
+      - aircrack-ng
+      - zaproxy
+      - john
+      - gnupg
+      - ngrep
     state: present
-  loop:
-    - nmap
-    - wireshark-cli
-    - wireshark-common
-    - wireshark-gtk
-    - dnstracer
-    - hashcat
-    - hashcat-utils
-    - aircrack-ng
-    - zaproxy
-    - john
+
+- name: install security tools from AUR
+  yay:
+    name:
+      - tcptraceroute
+      - 

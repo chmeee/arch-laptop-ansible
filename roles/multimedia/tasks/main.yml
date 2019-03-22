@@ -22,4 +22,5 @@
       - cmus
       - gimp
       - mcomix
+      - yed
     state: present
