@@ -1,7 +1,16 @@
 ---
 # tasks file for games
-- name: install games
-  pacman: 
+- name: install games packages
+  pacman:
     name:
-      - maelstrom
+      - gnugo
+      - qgo
     state: present
+
+- name: install games from AUR
+  yay: 
+    name:
+      - cgoban3
+#     - maelstrom
+    state: present
+  become: false
