@@ -2,6 +2,7 @@
 - hosts: all
   become: true
   roles:
+    - system-config
     - home-config
     - aur
     - base-tools
@@ -18,5 +19,4 @@
     - multimedia
     - games
 
-# system-config
 # wireless
