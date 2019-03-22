@@ -35,8 +35,9 @@
     name:
       - docker-machine-driver-kvm2
       - kubectl-bin
-      - kustomize
+      - kustomize-bin
       - kubernetes-helm-bin
       - kops-bin
       - minikube
     state: present
+  become: false
