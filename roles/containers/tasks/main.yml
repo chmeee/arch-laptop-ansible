@@ -29,3 +29,14 @@
     - centos:latest
     - debian:latest
     - alpine:latest
+
+- name: install AUR container packages
+  yay:
+    name:
+      - docker-machine-driver-kvm2
+      - kubectl-bin
+      - kustomize
+      - kubernetes-helm-bin
+      - kops-bin
+      - minikube
+    state: present
