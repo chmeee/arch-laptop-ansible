@@ -19,3 +19,11 @@
       - sl
       - lsof
     state: present
+
+- name: install base tools from AUR
+  yay:
+    name:
+      - mmv
+      - apg
+    state: present
+  become: false
