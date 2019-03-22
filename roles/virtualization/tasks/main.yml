@@ -8,6 +8,7 @@
       - virtualbox
       - vagrant
       - openvswitch
+      - pkgconf
     state: present
 
 - name: enable and start libvirtd service
@@ -23,7 +24,17 @@
     append: yes
 
 - name: install vagrant plugins
-  command: "vagrant plugin install {{ item }}"
-  loop:
-    - vagrant-libvirt
-    - vagrant-hostmanager
+  block:
+  - name: check if vagrant-libvirt is installed
+    shell: vagrant plugin list | grep -q vagrant-libvirt
+    register: vagrant_libvirt
+  - name: install vagrant-libvirt
+    command: "vagrant plugin install vagrant-libvirt"
+    when: vagrant_libvirt.rc != 0
+  - name: check if vagrant-libvirt is installed
+    shell: vagrant plugin list | grep -q vagrant-hostmanager
+    register: vagrant_hostmanager
+  - name: install vagrant-libvirt
+    command: "vagrant plugin install vagrant-hostmanager"
+    when: vagrant_hostmanager.rc != 0
+  become: false
