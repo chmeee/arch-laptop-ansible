@@ -4,7 +4,16 @@
   pacman:
     name:
       - puppet
+      - hiera
       - ansible
       - salt
       - terraform
+      - fabric
     state: present
+
+- name: install configuration management tools
+  yay:
+    name:
+      - puppet-bolt
+    state: present
+  become: false

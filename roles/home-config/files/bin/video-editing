@@ -1,0 +1,33 @@
+# Crop
+
+ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4
+
+# Remove audio
+
+ffmpeg -i example.mkv -c copy -an example-nosound.mkv
+
+# Insert subs
+
+ffmpeg -i infile.mp4 -i infile.srt -c copy -c:s mov_text outfile.mp4
+
+# Rescale image
+
+convert -scale 1920x1080 use-case1.png use-case1-ok.png
+
+# Repeat an image for 30s
+
+ffmpeg -r 60 -s 1920x1080 -loop 1 -i image.png -t 30 -vcodec libx264 -crf 25  -pix_fmt yuv420p test.mp4
+
+# Concat (needed for mp4)
+
+ffmpeg -i video1.avi -i video2.avi -filter complex "[0:v:0] [0:a:0] [1:v:0] [1:a:0] concat=n=2:v=1:a=1 [v] [a]" -map "[v]" -map "[a]" output_video.avi
+
+# Concat mp4, no audio
+
+ffmpeg -i video1.mp4 -i video2.mp4 -filter_complex "[0:v:0] [1:v:0] concat=n=2:v=1 [v]" -map "[v]" output_video.mp4
+
+## Reference: https://www.bugcodemaster.com/article/concatenate-videos-using-ffmpeg
+
+# Burn subtitles in
+#
+# Use handbrake, open subs file, select "burn in"

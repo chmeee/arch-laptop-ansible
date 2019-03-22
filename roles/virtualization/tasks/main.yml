@@ -4,8 +4,11 @@
   pacman:
     name:
       - bridge-utils
-      - libvirt
       - qemu
+      - libvirt
+      - virt-install
+      - virt-manager
+      - virt-viewer
       - virtualbox
       - vagrant
       - openvswitch
@@ -38,4 +41,11 @@
   - name: install vagrant-libvirt
     command: "vagrant plugin install vagrant-hostmanager"
     when: vagrant_hostmanager.rc != 0
+  become: false
+
+- name: install virtualization packages from AUR
+  yay:
+    name:
+      - imagewriter
+    state: present
   become: false

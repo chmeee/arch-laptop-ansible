@@ -8,6 +8,7 @@
       - ruby
       - ruby-irb
       - rubygems
+      - rbenv
       - jruby
       - ipython
       - jupyter
@@ -22,6 +23,9 @@
       - nodejs
       - npm
       - yarn
+      - subversion
+      - mercurial
+      - ocaml
     state: present
 
 - name: install programming languages and tools from AUR

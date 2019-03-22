@@ -4,10 +4,6 @@
   pacman:
     name:
       - nmap
-      - wireshark-cli
-      - wireshark-common
-      - wireshark-gtk
-      - dnstracer
       - hashcat
       - hashcat-utils
       - aircrack-ng
@@ -15,10 +11,12 @@
       - john
       - gnupg
       - ngrep
+      - ltrace
     state: present
 
 - name: install security tools from AUR
   yay:
     name:
-      - tcptraceroute
-      - 
+      #      - tcptraceroute
+    state: present
+  become: false

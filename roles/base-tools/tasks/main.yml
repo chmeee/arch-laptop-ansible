@@ -3,11 +3,12 @@
 - name: install base tools
   pacman:
     name:
-      - git
       - zathura
       - zathura-djvu
       - zathura-pdf-mupdf
       - ghostscript
+      - evince
+      - calibre
       - feh
       - gcc
       - dos2unix
@@ -21,6 +22,11 @@
       - sl
       - lsof
       - sl
+      - dosfstools
+      - smbclient
+      - putty
+      - rdesktop
+      - freerdp
     state: present
 
 - name: install base tools from AUR
@@ -28,5 +34,6 @@
     name:
       - mmv
       - apg
+      - pwsafe
     state: present
   become: false

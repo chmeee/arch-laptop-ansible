@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+ARGUMENTS=3
+
+if [[ $# != $ARGUMENTS ]]; then
+  echo "Error: needs $ARGUMENTS arguments"
+  echo "Syntax: $0 number-of-subtitle-lines step-in-seconds output-file"
+  exit 1
+fi
+
+SUBSCOUNT=$1
+STEP=$2
+if [[ $3 == '-' ]]; then
+  OUTFILE=/dev/stdout
+elif [[ -f $3 ]]; then
+  echo "Cowardly refusing to smash an existing file"
+  exit 1
+else
+  OUTFILE=$3
+fi
+
+
+for n in $(seq 0 $SUBSCOUNT)
+do
+  echo $n
+  echo -n "00:$(printf "%02d" $(($n*$STEP / 60))):$(printf "%02d" $(($n*$STEP % 60))),000 --> "
+  echo	  "00:$(printf "%02d" $((($n*$STEP+$STEP-1) / 60))):$(printf "%02d" $((($n*$STEP+$STEP-1) % 60))),000"
+  echo "Something something"
+  echo
+done > $OUTFILE

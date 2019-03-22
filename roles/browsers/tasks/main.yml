@@ -8,6 +8,9 @@
       - lynx
       - curl
       - wget
+      - icedtea-web
+      - httpie
+      - http-parser
     state: present
 
 - name: install browsers from AUR
@@ -15,5 +18,7 @@
     name:
       - google-chrome-beta
       - google-talk-plugin
+      - postman-bin
+      - insomnia
     state: present
   become: false

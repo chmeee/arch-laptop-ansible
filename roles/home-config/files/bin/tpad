@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+case $1 in
+  on)
+    OP=0;;
+  off)
+    OP=1;;
+  *)
+    synclient -l | grep TouchpadOff | grep -q 1; OP=$?;;
+esac
+
+synclient TouchpadOff=$OP

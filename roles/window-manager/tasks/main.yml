@@ -3,6 +3,10 @@
 - name: install sway
   pacman:
     name:
+      - i3lock
+      - i3status
+      - wayland
+      - wayland-protocols
       - sway
       - grim
     state: present

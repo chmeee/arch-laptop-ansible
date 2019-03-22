@@ -6,6 +6,7 @@
     - home-config
     - aur
     - base-tools
+    - network-tools
     - window-manager
     - terminals
     - browsers

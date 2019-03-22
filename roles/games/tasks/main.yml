@@ -5,12 +5,16 @@
     name:
       - gnugo
       - qgo
+      - nethack
     state: present
 
 - name: install games from AUR
   yay: 
     name:
       - cgoban3
+      - crawl
+      - egoboo
+      - bombermaaan
 #     - maelstrom
     state: present
   become: false

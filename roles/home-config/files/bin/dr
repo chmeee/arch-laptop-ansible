@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# != 1 ]]; then
+  echo "Error: wrong number of arguments"
+  echo "Syntax: $0 docker-image"
+fi
+
+DOCKER_IMAGE=$1
+
+eval $(docker inspect $DOCKER_IMAGE --format '{{ .ContainerConfig.Labels.RUN }}')

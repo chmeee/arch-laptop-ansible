@@ -40,5 +40,7 @@
       - kops-bin
       - minikube
       - k9s-bin
+      - origin-client-bin
+      - minishift-bin
     state: present
   become: false

@@ -3,6 +3,7 @@
 - name: install system packages
   pacman: 
     name:
+      - git
       - acpi
       - at
       - bluez
@@ -11,9 +12,16 @@
       - bluez-utils
       - lsb-release
       - sudo
+      - openssh
+      - openssh-askpass
+      - dhcpcd
+      - dmidecode
     # - chrony
       - iptables
       - nftables
+      - os-prober
+      - cups
+      - cups-pdf
     state: present
 
 - name: passwordless sudo

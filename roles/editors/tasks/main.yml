@@ -9,3 +9,15 @@
       - atom
       - kakoune
     state: present
+
+- name: install vim plugins
+  yay:
+    name:
+      - vim-csv-git
+      - vim-go
+      - vim-iptables
+      - vim-puppet
+      - vim-rainbow-parentheses-git
+      - vim-vimwiki
+    state: present
+  become: false

@@ -1,0 +1,23 @@
+---
+# tasks file for network-tools
+- name: install network tools packages
+  pacman:
+    name:
+      - socat
+      - openvpn
+      - wireshark-cli
+      - wireshark-common
+      - wireshark-gtk
+      - dnstracer
+      - lftp
+      - curlftpfs
+      - dnsmasq
+      - fping
+    state: present
+
+- name: install network tools from AUR
+  yay: 
+    name:
+      - tcptraceroute
+    state: present
+  become: false

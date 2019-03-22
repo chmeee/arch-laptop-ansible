@@ -21,6 +21,17 @@
       - cheese
       - cmus
       - gimp
+      - imagemagick
       - mcomix
+      - dia
       - yed
+      - openshot
+      - rtorrent
     state: present
+
+- name: install multimedia packages from AUR
+  yay:
+    name:
+      - audio-recorder
+    state: present
+  become: false

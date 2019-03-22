@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# curl -s http://www.adsl4ever.com/ip/ |grep h1|grep span|ruby -e 'a=/\d+\.\d+\.\d+\.\d+/.match(gets);print "#{a}\n"'
+curl -s ipinfo.io/ip

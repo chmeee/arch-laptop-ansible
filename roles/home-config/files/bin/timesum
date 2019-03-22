@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+grep -o "[0-9]\+:[0-9]\+" | xargs | tr ' ' , | \
+ruby -ne 's = $_.split(",").map{|e| t = e.split(":").map(&:to_i); t[0]*60+t[1]}.sum; puts "#{s/60}min. #{s%60}s."'
