@@ -4,9 +4,22 @@
   git:
     repo: https://aur.archlinux.org/yay.git
     dest: "/home/{{ laptop_user }}/software/system/yay"
+  become: false
 
-- name: build and install yay pacman package
-  command: "makepkg -si --noconfirm"
+- name: build yay pacman package
+  command: "makepkg -s"
   args:
     chdir: "/home/{{ laptop_user }}/software/system/yay"
     creates: "/home/{{ laptop_user }}/software/system/yay/yay-*.pkg.tar.xz"
+  become: false
+
+- name: install yay
+  pacman:
+    name: "/home/{{ laptop_user }}/software/system/yay/yay-9.1.0-1-x86_64.pkg.tar.xz"
+    state: present
+
+- name: colorized output
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#?Color$'
+    line: 'Color'
