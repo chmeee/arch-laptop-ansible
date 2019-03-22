@@ -7,6 +7,7 @@
       - qemu
       - virtualbox
       - vagrant
+      - openvswitch
     state: present
 
 - name: enable and start libvirtd service
@@ -21,8 +22,8 @@
     groups: libvirt,vboxusers
     append: yes
 
-#- name: install vagrant plugins
-#  command: "vagrant plugin install {{ item }}"
-#  loop:
-#    - vagrant-libvirt
-#    - vagrant-hostmanager
+- name: install vagrant plugins
+  command: "vagrant plugin install {{ item }}"
+  loop:
+    - vagrant-libvirt
+    - vagrant-hostmanager
