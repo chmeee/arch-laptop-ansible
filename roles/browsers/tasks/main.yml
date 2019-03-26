@@ -9,8 +9,11 @@
       - curl
       - wget
       - icedtea-web
+      - flashplugin
       - httpie
       - http-parser
+      - min
+      - w3m
     state: present
 
 - name: install browsers from AUR

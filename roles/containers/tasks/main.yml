@@ -8,6 +8,7 @@
       - docker-machine
       - runc
       - containerd
+      - skopeo
     state: present
 
 - name: enable and start docker service

@@ -8,16 +8,26 @@
       - code
       - atom
       - kakoune
+      - retext
+      - texlive-bin
     state: present
 
-- name: install vim plugins
-  yay:
-    name:
-      - vim-csv-git
-      - vim-go
-      - vim-iptables
-      - vim-puppet
-      - vim-rainbow-parentheses-git
-      - vim-vimwiki
-    state: present
+- name: install editor packages from AUR
+  block:
+  - name: install vim plugins
+    yay:
+      name:
+        - vim-csv-git
+        - vim-go
+        - vim-iptables
+        - vim-puppet
+        - vim-rainbow-parentheses-git
+        - vim-vimwiki
+      state: present
+  - name: install editors
+    yay:
+      name:
+        - remarkable
+      state: present
   become: false
+

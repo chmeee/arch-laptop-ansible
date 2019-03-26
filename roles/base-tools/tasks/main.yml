@@ -13,9 +13,11 @@
       - gcc
       - dos2unix
       - zip
+      - unzip
+      - unrar
+      - p7zip
       - afpfs-ng
       - bc
-      - bind-tools
       - cowsay
       - jq
       - xmlstarlet
@@ -23,10 +25,21 @@
       - lsof
       - sl
       - dosfstools
+      - mtools
       - smbclient
       - putty
       - rdesktop
       - freerdp
+      - winexe-git
+      - rsync
+      - gtop
+      - testdisk
+      - cdrdao
+      - cdrtools
+      - brasero
+      - dvd+rw-tools
+      - tree
+      - uudeview
     state: present
 
 - name: install base tools from AUR
@@ -35,5 +48,10 @@
       - mmv
       - apg
       - pwsafe
+      - toilet
+      - toilet-fonts
+      - stapler
+      - pdftk-bin
+      - impressive
     state: present
   become: false

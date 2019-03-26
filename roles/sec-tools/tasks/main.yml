@@ -11,7 +11,11 @@
       - john
       - gnupg
       - ngrep
+      - ncrack
       - ltrace
+      - strace
+      - sqlmap
+      - wpscan
     state: present
 
 - name: install security tools from AUR

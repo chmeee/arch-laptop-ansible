@@ -3,6 +3,7 @@
 - name: install network tools packages
   pacman:
     name:
+      - net-tools
       - socat
       - openvpn
       - wireshark-cli
@@ -10,14 +11,31 @@
       - wireshark-gtk
       - dnstracer
       - lftp
+      - atftp
       - curlftpfs
       - dnsmasq
       - fping
+      - bing
+      - mtr
+      - ethtool
+      - bind-tools
+      - ipcalc
+      - ipv6calc
+      - iptraf-ng
+      - traceroute
+      - whois
+      - openldap
+      - tcpdump
     state: present
 
 - name: install network tools from AUR
   yay: 
     name:
       - tcptraceroute
+      - apache-tools
+      - ubridge
+      - dynamips
+      - gns3-server
+      - gns3-gui
     state: present
   become: false

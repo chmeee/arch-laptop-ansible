@@ -13,6 +13,7 @@
       - vagrant
       - openvswitch
       - pkgconf
+      - wine
     state: present
 
 - name: enable and start libvirtd service
@@ -47,5 +48,6 @@
   yay:
     name:
       - imagewriter
+      - libguestfs
     state: present
   become: false

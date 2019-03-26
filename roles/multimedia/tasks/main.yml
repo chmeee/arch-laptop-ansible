@@ -27,11 +27,16 @@
       - yed
       - openshot
       - rtorrent
+      - byzanz
+      - recordmydesktop
+      - rtmpdump
+      - cdparanoia
     state: present
 
 - name: install multimedia packages from AUR
   yay:
     name:
       - audio-recorder
+      - mp3gain
     state: present
   become: false

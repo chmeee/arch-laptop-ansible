@@ -9,11 +9,14 @@
       - salt
       - terraform
       - fabric
+      - expect
     state: present
 
 - name: install configuration management tools
   yay:
     name:
       - puppet-bolt
+      - pssh
+      - pdk
     state: present
   become: false

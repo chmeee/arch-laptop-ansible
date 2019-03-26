@@ -6,15 +6,21 @@
       - gnugo
       - qgo
       - nethack
+      - scratch
+      - critter
+      - tuxpaint
+      - stone-soup
+      - xbill
     state: present
 
 - name: install games from AUR
   yay: 
     name:
       - cgoban3
-      - crawl
       - egoboo
-      - bombermaaan
-#     - maelstrom
+      - gogui
+      - koules
+      - spectemu
+      - xaos
     state: present
   become: false

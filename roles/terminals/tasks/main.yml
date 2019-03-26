@@ -6,4 +6,13 @@
       - xterm
       - termite 
       - kitty
+      - st
     state: present
+
+- name: install terminal packages from AUR
+  yay:
+    name:
+      - console-solarized-git
+      - terminus-terminal-bin
+    state: present
+  become: false

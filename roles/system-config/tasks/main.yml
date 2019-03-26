@@ -18,10 +18,14 @@
       - dmidecode
     # - chrony
       - iptables
+      - ipset
       - nftables
       - os-prober
       - cups
       - cups-pdf
+      - gpm
+      - samba
+      - ntfs-3g
     state: present
 
 - name: passwordless sudo

@@ -3,6 +3,7 @@
 - name: install programming languages and tools
   pacman:
     name:
+      - gcc
       - go
       - clojure
       - ruby
@@ -18,6 +19,7 @@
       - automake
       - cmake
       - maven
+      - ant
       - bison
       - ghc
       - nodejs
@@ -26,6 +28,7 @@
       - subversion
       - mercurial
       - ocaml
+      - tcl
     state: present
 
 - name: install programming languages and tools from AUR
