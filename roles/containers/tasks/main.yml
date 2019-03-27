@@ -40,6 +40,7 @@
       - kubernetes-helm-bin
       - kops-bin
       - minikube
+      - kubectx
       - k9s-bin
       - origin-client-bin
       - minishift-bin

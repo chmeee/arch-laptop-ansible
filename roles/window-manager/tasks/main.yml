@@ -1,6 +1,6 @@
 ---
 # tasks file for window-manager
-- name: install sway
+- name: install wm packages
   pacman:
     name:
       - i3lock

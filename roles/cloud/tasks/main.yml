@@ -5,3 +5,12 @@
     name:
       - aws-cli
     state: present
+
+- name: install cloud cli from AUR
+  yay:
+    name:
+      - google-cloud-sdk
+      - python-azure-cli
+      - ibmcloud-cli
+    state: present
+  become: false
