@@ -6,6 +6,7 @@
     - home-config
     - aur
     - base-tools
+    - wireless-tools
     - network-tools
     - window-manager
     - terminals
@@ -19,5 +20,3 @@
     - sec-tools
     - multimedia
     - games
-
-# wireless

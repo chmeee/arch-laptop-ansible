@@ -1,2 +1,9 @@
 ---
 # tasks file for wireless
+- name: install wireless packages
+  pacman:
+    name:
+      - wpa_supplicant
+      - wireless_tools
+      - iw
+    state: present
