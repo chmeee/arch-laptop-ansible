@@ -16,11 +16,13 @@
       - strace
       - sqlmap
       - wpscan
+      - truecrypt
+      - sslscan
     state: present
 
-- name: install security tools from AUR
-  yay:
-    name:
-      #      - tcptraceroute
-    state: present
-  become: false
+# - name: install security tools from AUR
+#   yay:
+#     name:
+#       #      - tcptraceroute
+#     state: present
+#   become: false

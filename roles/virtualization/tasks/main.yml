@@ -33,28 +33,30 @@
   block:
   - name: check if vagrant-libvirt is installed
     shell: vagrant plugin list | grep -q vagrant-libvirt
+    ignore_errors: yes
     register: vagrant_libvirt
   - name: install vagrant-libvirt
     command: "vagrant plugin install vagrant-libvirt"
     when: vagrant_libvirt.rc != 0
   - name: check if vagrant-libvirt is installed
     shell: vagrant plugin list | grep -q vagrant-hostmanager
+    ignore_errors: yes
     register: vagrant_hostmanager
   - name: install vagrant-libvirt
     command: "vagrant plugin install vagrant-hostmanager"
     when: vagrant_hostmanager.rc != 0
   - name: check if vagrant-mutate is installed
     shell: vagrant plugin list | grep -q vagrant-mutate
+    ignore_errors: yes
     register: vagrant_mutate
   - name: install vagrant-mutate
     command: "vagrant plugin install vagrant-mutate"
     when: vagrant_mutate.rc != 0
   become: false
 
-- name: install virtualization packages from AUR
-  yay:
-    name:
-      - imagewriter
-      - libguestfs
-    state: present
-  become: false
+# - name: install virtualization packages from AUR
+#   yay:
+#     name:
+#       - libguestfs
+#     state: present
+#   become: false

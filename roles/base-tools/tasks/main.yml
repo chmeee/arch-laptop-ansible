@@ -30,7 +30,7 @@
       - putty
       - rdesktop
       - freerdp
-      - winexe-git
+    # - winexe
       - rsync
       - gtop
       - testdisk
@@ -40,16 +40,18 @@
       - dvd+rw-tools
       - tree
       - uudeview
+      - fzf
+      - task
     state: present
 
 - name: install base tools from AUR
   yay:
     name:
-      - mmv
+    # - mmv
       - apg
       - pwsafe
-      - toilet
-      - toilet-fonts
+    # - toilet
+    # - toilet-fonts
       - stapler
       - pdftk-bin
       - impressive

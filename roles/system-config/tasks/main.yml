@@ -1,8 +1,20 @@
 ---
 # tasks file for system-config
+- name: enable multilib repo
+  blockinfile:
+    path: /etc/pacman.conf
+    block: |
+      [multilib]
+      Include = /etc/pacman.d/mirrorlist
+
 - name: install system packages
   pacman: 
     name:
+      - efibootmgr
+      - syslinux
+      - bash
+      - zsh
+      - bash-completion
       - git
       - acpi
       - at
@@ -10,6 +22,7 @@
       - bluez-firmware
       - bluez-libs
       - bluez-utils
+      - usbutils
       - lsb-release
       - sudo
       - openssh
@@ -26,14 +39,36 @@
       - gpm
       - samba
       - ntfs-3g
+      - texinfo
+    update_cache: yes
     state: present
 
 - name: passwordless sudo
   lineinfile:
     path: /etc/sudoers
-    regexp: '^%wheel'
     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
 
-# - name: blacklist modules
-# - name: audio config
+## audio configuration
+
+- name: install audio packages
+  pacman: 
+    name:
+      - alsa-utils
+      - alsa-plugins
+      - alsa-oss
+      - pulseaudio
+      - pulseaudio-alsa
+      - pulseaudio-bluetooth
+      - pavucontrol
+    state: present
+
+## this is not recommended by archwiki
+## consider if it's needed or not
+- name: add laptop_user to the audio group
+  user:
+    name: "{{ laptop_user }}"
+    groups: audio
+    append: yes
+
+## blacklist modules
 

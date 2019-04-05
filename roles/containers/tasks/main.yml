@@ -46,3 +46,36 @@
       - minishift-bin
     state: present
   become: false
+
+- name: add bash completion for k8s
+  shell: kubectl completion bash > /etc/bash-completion.d/kubectl
+
+- name: add kubectl aliases file
+  get_url:
+    url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases
+    dest: "/home/{{ laptop_user }}/.kubectl_aliases"
+    mode: 0466
+
+- name: ensure .kubectl-aliases is sourced in .bashrc
+  lineinfile:
+    path: "/home/{{ laptop_user }}/.bashrc"
+    line: "source ~/.kubectl-aliases"
+
+- name: install script to ensure alias are tab-completed
+  get_url:
+    url: https://raw.githubusercontent.com/cykerway/complete-alias/master/bash_completion.sh
+    dest: "/home/{{ laptop_user }}/bin/bash_completion.sh"
+    mode: 0466
+
+- name: ensure bash_completion.sh is sourced in .bashrc
+  lineinfile:
+    path: "/home/{{ laptop_user }}/.bashrc"
+    line: "source ~/bin/bash_completion.sh"
+
+- name: add kubectl aliases to be tab-completed
+  blockinfile:
+    path: "/home/{{ laptop_user }}/.bashrc"
+    block: |
+      for _a in $(sed '/^alias /!d;s/^alias //;s/=.*$//' ~/.kubectl_aliases); do
+        complete -F _complete_alias "$_a"
+      done

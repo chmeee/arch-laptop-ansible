@@ -1,6 +1,6 @@
 ---
 # tasks file for home-config
-- name: Create home directory structure
+- name: create home directory structure
   file:
     path: "/home/{{ laptop_user }}/{{ item }}"
     state: directory
@@ -11,8 +11,26 @@
     - bin
     - docs
     - downloads
+    - documents
     - personal/projects
     - pictures
     - software/system
+    - software/games
     - misc
     - tmp
+
+- name: create .ssh directory structure
+  file:
+    path: "/home/{{ laptop_user }}/{{ item }}"
+    state: directory
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0700
+  loop:
+    - .ssh
+
+# - name: bash config
+
+# - name: vim config
+
+

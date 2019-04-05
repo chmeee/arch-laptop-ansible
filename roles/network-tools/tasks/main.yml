@@ -5,6 +5,7 @@
     name:
       - net-tools
       - socat
+      - tsocks
       - openvpn
       - wireshark-cli
       - wireshark-common
@@ -13,9 +14,9 @@
       - lftp
       - atftp
       - curlftpfs
+      - sshfs
       - dnsmasq
       - fping
-      - bing
       - mtr
       - ethtool
       - bind-tools
@@ -26,6 +27,7 @@
       - whois
       - openldap
       - tcpdump
+      - sshuttle
     state: present
 
 - name: install network tools from AUR
@@ -34,8 +36,9 @@
       - tcptraceroute
       - apache-tools
       - ubridge
-      - dynamips
-      - gns3-server
-      - gns3-gui
+      - bing
+    # - dynamips 
+    # - gns3-server # conflict of python libraries
+    # - gns3-gui
     state: present
   become: false

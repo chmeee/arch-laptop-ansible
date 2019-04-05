@@ -17,9 +17,10 @@
   yay: 
     name:
       - cgoban3
-      - egoboo
+      - gopanda
       - gogui
       - koules
+      - egoboo
       - spectemu
       - xaos
     state: present

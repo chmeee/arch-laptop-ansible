@@ -6,7 +6,7 @@
       - xterm
       - termite 
       - kitty
-      - st
+      - tmux
     state: present
 
 - name: install terminal packages from AUR
@@ -14,5 +14,6 @@
     name:
       - console-solarized-git
       - terminus-terminal-bin
+      - st
     state: present
   become: false

@@ -9,7 +9,6 @@
       - ruby
       - ruby-irb
       - rubygems
-      - rbenv
       - jruby
       - ipython
       - jupyter
@@ -25,15 +24,17 @@
       - nodejs
       - npm
       - yarn
-      - subversion
-      - mercurial
       - ocaml
       - tcl
+      - r
+      - subversion
+      - mercurial
     state: present
 
 - name: install programming languages and tools from AUR
   yay:
     name:
+      - rbenv
       - leiningen
       - leiningen-completions
     state: present

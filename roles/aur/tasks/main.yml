@@ -23,3 +23,7 @@
     path: /etc/pacman.conf
     regexp: '^#?Color$'
     line: 'Color'
+
+- name: update AUR packages
+  yay:
+    update_cache: yes

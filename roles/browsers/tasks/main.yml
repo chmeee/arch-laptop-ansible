@@ -20,7 +20,7 @@
   yay:
     name:
       - google-chrome-beta
-      - google-talk-plugin
+      - google-talkplugin
       - postman-bin
       - insomnia
     state: present

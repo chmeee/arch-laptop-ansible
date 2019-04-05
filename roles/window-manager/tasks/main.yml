@@ -34,3 +34,19 @@
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
+
+- name: add fonts packages from official and AUR
+  yay:
+    name:
+      - ttf-bitstream-vera
+      - ttf-dejavu
+      - ttf-freefont
+      - ttf-hanazono
+      - ttf-inconsolata
+      - ttf-liberation
+      - ttf-linux-libertine
+      - ttf-sazanami
+      - ttf-ubuntu-font-family
+      - ttf-windows
+    state: present
+  become: false
