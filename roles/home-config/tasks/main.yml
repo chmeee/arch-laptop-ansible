@@ -29,8 +29,12 @@
   loop:
     - .ssh
 
-# - name: bash config
-
-# - name: vim config
-
-
+- name: copy dot-files
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ laptop_user }}/.{{ item }}"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0640
+  loop:
+    - bashrc

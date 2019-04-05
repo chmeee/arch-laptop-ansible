@@ -1,0 +1,93 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Colorized ls
+alias ls='ls -F --color=auto'
+
+# I like simple prompts
+PS1='\$ '
+
+# Current date
+DATE=$(date +%Y.%m.%d)
+
+# Best editor ever
+EDITOR=/usr/bin/vim
+
+# Everyone needs a home, even Java
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+
+# Less is more
+PAGER=/usr/bin/less
+
+# The obstacle is the path
+PATH=~/bin:/home/jmpavon/.gem/ruby/2.6.0/bin:$PATH
+
+# Randomfile
+RANDFILE=~/.rnd
+
+export DATE EDITOR JAVA_HOME PATH PAGER RANDFILE
+
+alias vi='vim'
+alias rgrep='grep -r'
+
+# Tip #209 Directory tree
+alias dirf='find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"'
+
+# Last downloaded file alias
+alias ldl='\ls -tr ~/Downloads | tail -1 | xargs -I{} printf "$HOME/Downloads/%s" {}'
+
+# Send to slack the last downloaded file
+sls()
+{
+  if [ ! -z $1 ]; then slackcat -c $1 "$(ldl)"; fi
+}
+
+# Avoid some typing aliases
+alias oldest='find . -type f -printf "%T@ %p\n" | sort -nr'
+alias newest='find . -type f -printf "%T@ %p\n" | sort -n'
+alias webrick='ruby -run -e httpd . -p 8000'
+alias ipa='echo wlp2s0 enp3s0f2 | xargs -n1 ip a l dev'
+
+# Env variables for programming languages
+RUBYOPT="rubygems"
+GOPATH=~/Personal/proyectos/go
+OS_OUTPUT_GOPATH=1
+PATH=$PATH:$GOPATH/bin
+
+export RUBYOPT GOPATH OS_OUTPUT_GOPATH PATH
+
+# git aliases
+alias gcim='git ci -m'
+alias gciam='git ci -am'
+alias gpush='git push origin'
+alias gpull='git pull origin `git rev-parse --abbrev-ref HEAD`'
+alias gbranch='git rev-parse --abbrev-ref HEAD'
+alias gitgraph="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit"
+
+# git completion and prompt
+. /usr/share/git/completion/git-completion.bash
+. /usr/share/git/completion/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='$(__git_ps1 "(%s)" 2> /dev/null)\$ '
+
+# gopass completion
+source <(gopass completion bash)
+
+# pwsafe random file deletion
+pwsafe()
+{
+  /usr/bin/pwsafe $*
+  rm -f ''$'\001'
+}
+
+# History across multiple terminals
+## Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups  
+## When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+## After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
