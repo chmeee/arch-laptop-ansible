@@ -21,6 +21,10 @@ Otherwise, if you want to install from localhost, you'll need:
 
 ## Configuration
 
-## Run
+## Run playbook
 
 Run the `main.yml` playbook to configure your laptop.
+
+## Run scripts
+
+There are some scripts to copy data, usually sensible, that are supposed to run once.
