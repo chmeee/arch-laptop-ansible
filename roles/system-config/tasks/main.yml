@@ -40,6 +40,7 @@
       - samba
       - ntfs-3g
       - texinfo
+      - openntpd
     update_cache: yes
     state: present
 
@@ -78,5 +79,17 @@
     groups: audio
     append: yes
 
-## blacklist modules
 
+## Time
+
+- name: set timezone to Europe/Madrid
+  timezone:
+    name: Europe/Madrid
+
+- name: enable and start openntpd
+  service:
+    name: openntpd
+    state: started
+    enabled: yes
+
+## blacklist modules
