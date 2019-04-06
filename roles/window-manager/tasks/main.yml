@@ -3,6 +3,8 @@
 - name: install wm packages
   pacman:
     name:
+      - i3-wm
+      - dmenu
       - i3lock
       - i3status
       - wayland
@@ -11,21 +13,27 @@
       - grim
     state: present
 
-- name: create config directory
+- name: create sway/i3 config directories
   file:
-    path: "/home/{{ laptop_user }}/.config/sway"
+    path: "/home/{{ laptop_user }}/.config/{{ item }}"
     state: directory
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0755
+  loop:
+    - sway
+    - i3
 
-- name: sway config file
+- name: sway/i3 config files
   copy:
-    src: config
-    dest: .config/sway/config
+    src: "{{ item }}_config"
+    dest: ".config/{{ item }}/config"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
+  loop:
+    - sway
+    - i3
 
 - name: Xdefaults file
   copy:
