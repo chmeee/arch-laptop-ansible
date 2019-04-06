@@ -48,6 +48,14 @@
     path: /etc/sudoers
     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
 
+- name: bash-completions directory
+  file:
+    path: "/etc/bash-completion.d/"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
 ## audio configuration
 
 - name: install audio packages
