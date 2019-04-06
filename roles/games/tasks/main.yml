@@ -10,7 +10,6 @@
       - critter
       - tuxpaint
       - stone-soup
-      - xbill
     state: present
 
 - name: install games from AUR

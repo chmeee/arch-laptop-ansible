@@ -16,7 +16,6 @@
   yay:
     name:
       - puppet-bolt
-      - pssh
       - pdk
     state: present
   become: false

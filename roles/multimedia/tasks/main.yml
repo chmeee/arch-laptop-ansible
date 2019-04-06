@@ -24,7 +24,6 @@
       - imagemagick
       - mcomix
       - dia
-      - yed
       - openshot
       - rtorrent
       - byzanz
@@ -38,5 +37,6 @@
     name:
       - audio-recorder
       - mp3gain
+      - yed
     state: present
   become: false

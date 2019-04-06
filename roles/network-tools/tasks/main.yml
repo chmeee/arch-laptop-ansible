@@ -8,8 +8,7 @@
       - tsocks
       - openvpn
       - wireshark-cli
-      - wireshark-common
-      - wireshark-gtk
+      - wireshark-qt
       - dnstracer
       - lftp
       - atftp
