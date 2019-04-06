@@ -50,6 +50,7 @@
     # - mmv
       - apg
       - pwsafe
+      - gopass
     # - toilet
     # - toilet-fonts
       - stapler
