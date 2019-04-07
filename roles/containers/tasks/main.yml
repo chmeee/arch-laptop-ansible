@@ -52,8 +52,8 @@
 
 - name: add kubectl aliases file
   get_url:
-    url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases
-    dest: "/home/{{ laptop_user }}/.kubectl_aliases"
+    url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl-aliases
+    dest: "/home/{{ laptop_user }}/.kubectl-aliases"
     mode: 0466
 
 - name: ensure .kubectl-aliases is sourced in .bashrc
@@ -76,6 +76,6 @@
   blockinfile:
     path: "/home/{{ laptop_user }}/.bashrc"
     block: |
-      for _a in $(sed '/^alias /!d;s/^alias //;s/=.*$//' ~/.kubectl_aliases); do
+      for _a in $(sed '/^alias /!d;s/^alias //;s/=.*$//' ~/.kubectl-aliases); do
         complete -F _complete_alias "$_a"
       done
