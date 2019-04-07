@@ -43,7 +43,7 @@
 - name: copy global gitconfig file
   copy:
     src: gitconfig
-    dst: "/home/{{ laptop_user }}/.gitconfig"
+    dest: "/home/{{ laptop_user }}/.gitconfig"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644

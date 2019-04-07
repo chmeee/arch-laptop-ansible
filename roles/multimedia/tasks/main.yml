@@ -44,7 +44,7 @@
 - name: copy rtorrent config file
   template:
     src: rtorrent.rc.j2
-    dst: "/home/{{ laptop_user }}/.rtorrent.rc"
+    dest: "/home/{{ laptop_user }}/.rtorrent.rc"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644

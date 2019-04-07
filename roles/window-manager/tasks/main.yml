@@ -62,7 +62,7 @@
 - name: copy local fonts
   copy:
     src: fonts
-    dst: "/home/{{ laptop_user }}/.fonts"
+    dest: "/home/{{ laptop_user }}/.fonts"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
