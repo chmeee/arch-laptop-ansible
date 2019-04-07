@@ -12,12 +12,31 @@
     - docs
     - downloads
     - documents
+    - misc
     - personal/projects
     - pictures
-    - software/system
+    - software/containers
     - software/games
-    - misc
+    - software/networking
+    - software/system
+    - software/vagrant
+    - software/vbox
     - tmp
+
+- name: create work directory structure
+  file:
+    path: "/home/{{ laptop_user }}/{{ current_employer }}/{{ item }}"
+    state: directory
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0755
+  loop:
+    - code
+    - config
+    - learning
+    - misc
+    - projects
+    - sales/presentations
 
 - name: create .ssh directory structure
   file:
@@ -38,3 +57,11 @@
     mode: 0640
   loop:
     - bashrc
+
+- name: add home bin files
+  copy:
+    src: bin
+    dest: "/home/{{ laptop_user }}/bin"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0750
