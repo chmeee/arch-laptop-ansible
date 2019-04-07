@@ -1,0 +1,120 @@
+set background=dark
+filetype plugin indent on
+syntax on
+set sw=2 sts=2
+
+let myscriptsfile  = "~/.vim/scripts.vim"
+
+" Clear old autocmds in group
+augroup filetype
+  autocmd!
+  " autoindent with two spaces, always expand tabs
+  autocmd FileType html,ruby,eruby,yaml,r,R set ai sw=2 sts=2 et
+augroup END
+
+augroup filetype
+  au! BufRead Rakefile set ai sw=2 sts=2 et
+augroup END
+
+au! Syntax tjp         so ~/.vim/syntax/tjp.vim
+" au! Syntax mkd         so ~/.vim/syntax/mkd.vim
+au! Syntax circos      so ~/.vim/syntax/circos.vim
+au! Syntax bod      so ~/.vim/syntax/book_of_death.vim
+
+augroup filetype
+  " taskjuggler files
+  au! BufNewFile,BufRead *.tj{p,i} set ft=tjp
+augroup END
+
+augroup filetype
+  " tex files
+  au! FileType tex set tw=70
+augroup END
+
+augroup filetype
+  " mail files
+  au! FileType mail set tw=80 sw=2 sts=2 et
+augroup END
+
+"augroup filetype
+"  au! BufNewFile,BufRead *.md  set ft=mkd ai textwidth=80 formatoptions=toqn2 comments=n:>
+"augroup END
+
+augroup filetype
+  au! BufNewFile,BufRead circos*conf,ideogram*conf,ticks*conf  set ft=circos ai textwidth=80 formatoptions=tcroqn2 comments=n:>
+augroup END
+
+augroup filetype
+  au! BufNewFile,BufRead *.nse  set ft=lua sts=2 ts=2
+augroup END
+
+augroup filetype
+  au! BufNewFile,BufRead *.js  set ft=javascript sts=2
+augroup END
+
+augroup filetype
+  au! BufNewFile,BufRead *.mm  set ft=xml
+augroup END
+
+augroup filetype
+  au! BufNewFile,BufRead *.bod,Book_of_death.txt  set ft=bod sts=2 ai textwidth=80 
+augroup END
+
+" Status line
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " filename
+set statusline+=%h%m%r%w                     " status flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=%=                           " right align remainder
+set statusline+=0x%-8B                       " character value
+set statusline+=%-14(%l,%c%V%)               " line, character
+set statusline+=%<%P                         " file position
+
+"let moria_style = 'dark'
+"colo moria
+
+hi StatusLine ctermbg=Black ctermfg=DarkYellow
+hi StatusLineNC ctermbg=Black ctermfg=DarkYellow
+hi VertSplit ctermbg=Black ctermfg=DarkYellow
+hi ModeMsg ctermbg=Black ctermfg=Blue
+
+hi clear SpellBad
+hi SpellBad term=standout ctermfg=1 term=underline cterm=underline
+hi clear SpellCap
+hi SpellCap term=underline cterm=underline
+hi clear SpellRare
+hi SpellRare term=underline cterm=underline
+hi clear SpellLocal
+hi SpellLocal term=underline cterm=underline
+
+" Read modeline
+set modeline
+
+" New command to add 1 to numbers at the start of a line
+command! -range AddOne   :<line1>,<line2>rubydo $_.gsub!(/^(\d+)/) { |n| n.to_i + 1 }
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/', 'syntax': 'markdown', 'ext': '.md', 'index': 'Meta/Wiki/index'}]
+let g:vimwiki_folding = 1
+
+" Vim-clojure
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
+
+" Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
+"To activate the interactive interface define the following variables
+"in your .vimrc:
+"let vimclojure#WantNailgun = 1
+"#let vimclojure#NailgunClient = "ng"
+"and run:
+"    java -cp /usr/share/clojure/clojure.jar:/usr/share/vim-clojure/vimclojure.jar vimclojure.nailgun.NGServer 127.0.0.1
+
+highlight! link DiffText Todo

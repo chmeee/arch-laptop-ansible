@@ -31,3 +31,10 @@
       state: present
   become: false
 
+- name: copy vim config
+  copy:
+    src: vimrc
+    dst: "/home/{{ laptop_user }}/.vimrc"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644
