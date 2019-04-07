@@ -48,3 +48,14 @@
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
+
+- name: create torrents directories
+  file:
+    path: "/home/{{ laptop_user }}/{{ item }}"
+    state: directory
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0755
+  loop:
+    - misc/torrents
+    - downloads/torrents
