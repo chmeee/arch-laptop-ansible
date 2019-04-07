@@ -1,0 +1,23 @@
+[user]
+  email = jmpavon@gitlab.com
+  name = José Manuel Pavón
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  blame = auto
+[merge]
+  tool = meld
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  slog = log --pretty=format:'%C(white)[%C(yellow)%h%C(white)] %C(blue)(%ad) %C(white)%s %C(green)%cn' --date=local
+[diff "odf"]
+  textconv=odt2txt
+[core]
+  excludesfile = ~/.gitignore
+[push]
+  default = current
+[rerere]
+  enabled = true
