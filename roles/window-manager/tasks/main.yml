@@ -43,6 +43,14 @@
     group: "{{ laptop_user }}"
     mode: 0644
 
+- name: xserverrc file
+  copy:
+    src: xserverrc
+    dest: .xserverrc
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644
+
 - name: add fonts packages from official and AUR
   yay:
     name:
