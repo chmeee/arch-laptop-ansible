@@ -38,3 +38,15 @@
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
+
+- name: add code extensions
+  command: "code --install-extension {{ item }}"
+  loop:
+    - jpogran.puppet-vscode
+    - mauve.terraform
+    - mindginative.terraform-snippets
+    - msazurermtools.azurerm-vscode-tools
+    - ms-python.python
+    - ms-vscode.azurecli
+    - ms-vscode.Go
+    - rebornix.ruby
