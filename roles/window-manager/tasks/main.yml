@@ -58,3 +58,13 @@
       - ttf-windows
     state: present
   become: false
+
+- name: copy local fonts
+  copy:
+    src: fonts
+    dst: "/home/{{ laptop_user }}/.fonts"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644
+    directory_mode: 0755
+
