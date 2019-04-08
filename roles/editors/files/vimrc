@@ -97,7 +97,7 @@ command! -range AddOne   :<line1>,<line2>rubydo $_.gsub!(/^(\d+)/) { |n| n.to_i 
 
 " Vimwiki
 let g:vimwiki_list = [{'path': '~/', 'syntax': 'markdown', 'ext': '.md', 'index': 'Meta/Wiki/index'}]
-let g:vimwiki_folding = 1
+let g:vimwiki_folding = ''
 
 " Vim-clojure
 let g:vimclojure#HighlightBuiltins = 1
