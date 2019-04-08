@@ -17,3 +17,11 @@
       - st
     state: present
   become: false
+
+- name: copy termite config
+  copy:
+    src: termite.config
+    dest: "/home/{{ laptop_user }}/.config/termite/config"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644
