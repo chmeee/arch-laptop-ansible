@@ -1,0 +1,9 @@
+---
+# tasks file for office
+- name: install office packages
+  pacman: 
+    name:
+      - libreoffice-fresh
+      - libreoffice-fresh-en-gb
+      - libreoffice-fresh-es
+    state: present
