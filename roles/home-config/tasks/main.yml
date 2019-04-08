@@ -61,7 +61,7 @@
 - name: add home bin files
   copy:
     src: bin
-    dest: "/home/{{ laptop_user }}/bin"
+    dest: "/home/{{ laptop_user }}/"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0750
