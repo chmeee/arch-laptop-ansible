@@ -15,6 +15,7 @@
       - console-solarized-git
       - terminus-terminal-bin
       - st
+      - byobu
     state: present
   become: false
 
