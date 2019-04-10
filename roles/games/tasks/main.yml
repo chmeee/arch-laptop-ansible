@@ -29,5 +29,5 @@
 - name: alias for sabaki
   lineinfile:
     path: "/home/{{ laptop_user }}/.bashrc"
-    line: 'alias sabaki=/opt/Sabaki/sabaki"
+    line: 'alias sabaki=/opt/Sabaki/sabaki'
     state: present
