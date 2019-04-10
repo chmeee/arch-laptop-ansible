@@ -19,6 +19,14 @@
     state: present
   become: false
 
+- name: create termite local config
+  file:
+    path: "/home/{{ laptop_user }}/.config/termite"
+    state: directory
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0755
+
 - name: copy termite config
   copy:
     src: termite.config
