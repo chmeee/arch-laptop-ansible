@@ -27,7 +27,7 @@
 - name: sway/i3 config files
   copy:
     src: "{{ item }}_config"
-    dest: ".config/{{ item }}/config"
+    dest: "/home/{{ laptop_user }}/.config/{{ item }}/config"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
