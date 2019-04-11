@@ -57,6 +57,19 @@
     group: root
     mode: 0755
 
+- name: /mnt directories
+  file:
+    path: "/mnt/{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  loop:
+    - usb
+    - usb2
+    - usb3
+    - usb4
+
 ## audio configuration
 
 - name: install audio packages
