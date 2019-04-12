@@ -10,6 +10,8 @@
       - wayland
       - wayland-protocols
       - sway
+      - swaylock
+      - wl-clipboard 
       - grim
     state: present
 
@@ -38,7 +40,7 @@
 - name: Xdefaults file
   copy:
     src: Xdefaults
-    dest: .Xdefaults
+    dest: "/home/{{ laptop_user }}/.Xdefaults"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
@@ -46,7 +48,7 @@
 - name: xserverrc file
   copy:
     src: xserverrc
-    dest: .xserverrc
+    dest: "/home/{{ laptop_user }}/.xserverrc"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
