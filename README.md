@@ -29,4 +29,6 @@ Run the `main.yml` playbook to configure your laptop.
 
 # TODO
 
-Divide tasks in different files for different purposes
+  * Divide tasks in different files for different purposes
+  * Create role variables to store packages and other role variables
+  * Use `become_user: {{ laptop_user }}` instead of `become: false`
