@@ -1,2 +1,12 @@
 ---
 # vars file for editors
+editors:
+  code_extensions:
+    - jpogran.puppet-vscode
+    - mauve.terraform
+    - mindginative.terraform-snippets
+    - msazurermtools.azurerm-vscode-tools
+    - ms-python.python
+    - ms-vscode.azurecli
+    - ms-vscode.Go
+    - rebornix.ruby

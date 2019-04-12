@@ -39,14 +39,14 @@
     group: "{{ laptop_user }}"
     mode: 0644
 
-- name: add code extensions
-  command: "code --install-extension {{ item }}"
-  loop:
-    - jpogran.puppet-vscode
-    - mauve.terraform
-    - mindginative.terraform-snippets
-    - msazurermtools.azurerm-vscode-tools
-    - ms-python.python
-    - ms-vscode.azurecli
-    - ms-vscode.Go
-    - rebornix.ruby
+- name: install code extensions
+  block:
+  - name: list installed code extensions
+    command: "code --list-extensions"
+    register: code_extensions
+
+  - name: add code extensions
+    command: "code --install-extension {{ item }}"
+    loop: "{{ editors.code_extensions }}"
+    when: item not in "{{ code_extensions.stdout_lines }}"
+  become_user: "{{ laptop_user }}"
