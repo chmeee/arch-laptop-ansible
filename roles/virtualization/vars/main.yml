@@ -1,2 +1,7 @@
 ---
 # vars file for virtualization
+virtualization:
+  vagrant_plugins:
+    - vagrant-libvirt
+    - vagrant-hostmanager
+    - vagrant-mutate
