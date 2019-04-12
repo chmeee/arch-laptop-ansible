@@ -33,6 +33,7 @@
       - iptables
       - ipset
       - nftables
+      - ebtables
       - os-prober
       - cups
       - cups-pdf
