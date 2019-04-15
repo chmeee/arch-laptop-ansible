@@ -106,4 +106,15 @@
     state: started
     enabled: yes
 
+
+## Samba is not enabled by default
+## This is just to share between VMs when needed
+- name: samba configuration to share $HOME
+  template:
+    src: smb.conf.j2
+    dest: "/etc/samba/smb.conf"
+    owner: root
+    group: root
+    mode: 0644
+
 ## blacklist modules
