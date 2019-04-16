@@ -42,6 +42,7 @@
       - uudeview
       - fzf
       - task
+      - telegram-desktop
     state: present
 
 - name: install base tools from AUR
