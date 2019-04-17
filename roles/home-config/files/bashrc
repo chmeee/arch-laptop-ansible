@@ -31,6 +31,13 @@ RANDFILE=~/.rnd
 
 export DATE EDITOR JAVA_HOME PATH PAGER RANDFILE
 
+# Launch ssh-agent if it's not running
+
+if [[ -z $SSH_AGENT_PID ]]; then
+  eval $(ssh-agent)
+fi
+
+# Alias
 alias vi='vim'
 alias rgrep='grep -r'
 
