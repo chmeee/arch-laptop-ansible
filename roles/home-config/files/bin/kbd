@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# != 2 ]]; then
+  echo "Error: need keyboard layout"
+  echo "Syntax: $0 [es|gb|...]"
+  exit 1
+fi
+
+setxkbmap $1
+swaymsg input 1:1:AT_Translated_Set_2_keyboard kbd_layout $1

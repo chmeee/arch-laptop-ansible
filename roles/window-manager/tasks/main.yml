@@ -26,16 +26,21 @@
     - sway
     - i3
 
-- name: sway/i3 config files
+- name: copy i3 config file
   copy:
-    src: "{{ item }}_config"
-    dest: "/home/{{ laptop_user }}/.config/{{ item }}/config"
+    src: "i3_config"
+    dest: "/home/{{ laptop_user }}/.config/i3/config"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
     mode: 0644
-  loop:
-    - sway
-    - i3
+
+- name: copy sway config template
+  template:
+    src: "sway_config"
+    dest: "/home/{{ laptop_user }}/.config/sway/config"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644
 
 - name: Xdefaults file
   copy:

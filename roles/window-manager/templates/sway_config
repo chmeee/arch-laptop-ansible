@@ -161,8 +161,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # My keybindings
-bindsym $mod+u exec /usr/bin/setxkbmap gb
-bindsym $mod+e exec /usr/bin/setxkbmap es
+bindsym $mod+u exec /home/{{ laptop_user }}/bin/kbd gb
+bindsym $mod+e exec /home/{{ laptop_user }}/bin/kbd es
 bindsym $mod+q exec /usr/bin/swaylock -c 111111
 bindsym $mod+m exec /usr/bin/recordmydesktop --no-sound
 bindsym $mod+n exec pkill recordmydesktop
