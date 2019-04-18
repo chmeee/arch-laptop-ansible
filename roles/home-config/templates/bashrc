@@ -24,7 +24,7 @@ JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 PAGER=/usr/bin/less
 
 # The obstacle is the path
-PATH=~/bin:/home/jmpavon/.gem/ruby/2.6.0/bin:$PATH
+PATH=~/bin:/home/{{ laptop_user }}/.gem/ruby/2.6.0/bin:$PATH
 
 # Randomfile
 RANDFILE=~/.rnd
@@ -45,7 +45,7 @@ alias rgrep='grep -r'
 alias dirf='find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"'
 
 # Last downloaded file alias
-alias ldl='\ls -tr ~/Downloads | tail -1 | xargs -I{} printf "$HOME/Downloads/%s" {}'
+alias ldl='\ls -tr ~/downloads | tail -1 | xargs -I{} printf "$HOME/downloads/%s" {}'
 
 # Send to slack the last downloaded file
 sls()
