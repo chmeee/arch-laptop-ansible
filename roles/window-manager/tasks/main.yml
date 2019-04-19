@@ -71,6 +71,7 @@
       - ttf-sazanami
       - ttf-ubuntu-font-family
       - ttf-windows
+      - noto-fonts-emoji
     state: present
   become: false
 
@@ -82,4 +83,3 @@
     group: "{{ laptop_user }}"
     mode: 0644
     directory_mode: 0755
-
