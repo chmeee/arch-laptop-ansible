@@ -37,7 +37,7 @@
   - name: add vagrant plugins
     command: "vagrant plugin install {{ item }}"
     loop: "{{ virtualization.vagrant_plugins }}"
-    when: item not in "{{ vagrant_plugins.stdout_lines }}"
+    when: item not in vagrant_plugins.stdout_lines
   become_user: "{{ laptop_user }}"
 
 
