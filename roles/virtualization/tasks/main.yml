@@ -40,30 +40,22 @@
     when: item not in "{{ vagrant_plugins.stdout_lines }}"
   become_user: "{{ laptop_user }}"
 
-# - name: install vagrant plugins
-#   block:
-#   - name: check if vagrant-libvirt is installed
-#     shell: vagrant plugin list | grep -q vagrant-libvirt
-#     ignore_errors: yes
-#     register: vagrant_libvirt
-#   - name: install vagrant-libvirt
-#     command: "vagrant plugin install vagrant-libvirt"
-#     when: vagrant_libvirt.rc != 0
-#   - name: check if vagrant-libvirt is installed
-#     shell: vagrant plugin list | grep -q vagrant-hostmanager
-#     ignore_errors: yes
-#     register: vagrant_hostmanager
-#   - name: install vagrant-libvirt
-#     command: "vagrant plugin install vagrant-hostmanager"
-#     when: vagrant_hostmanager.rc != 0
-#   - name: check if vagrant-mutate is installed
-#     shell: vagrant plugin list | grep -q vagrant-mutate
-#     ignore_errors: yes
-#     register: vagrant_mutate
-#   - name: install vagrant-mutate
-#     command: "vagrant plugin install vagrant-mutate"
-#     when: vagrant_mutate.rc != 0
-#   become_user: "{{ laptop_user }}"
+
+- name: sudoers config for vagrant plugins
+  template:
+    src: sudoers-vagrant_hostmanager2
+    dest: /etc/sudoers.d/vagrant_hostmanager2
+    owner: root
+    group: root
+    mode: 0640
+
+- name: sudoers config for vagrant plugins
+  copy:
+    src: sudoers-vagrant_nfs
+    dest: /etc/sudoers.d/vagrant_nfs
+    owner: root
+    group: root
+    mode: 0640
 
 # - name: install virtualization packages from AUR
 #   yay:

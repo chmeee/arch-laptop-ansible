@@ -1,0 +1,2 @@
+Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/{{ laptop_user }}/.vagrant.d/tmp/hosts.local /etc/hosts
+%wheel ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE
