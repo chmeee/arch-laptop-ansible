@@ -32,7 +32,7 @@
 - name: install vagrant plugins
   block:
   - name: list installed vagrant plugins
-    command: "vagrant plugin list"
+    shell: "vagrant plugin list | awk '{ print $1 }'"
     register: vagrant_plugins
   - name: add vagrant plugins
     command: "vagrant plugin install {{ item }}"
