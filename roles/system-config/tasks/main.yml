@@ -42,6 +42,7 @@
       - ntfs-3g
       - texinfo
       - openntpd
+      - nfs-utils
     update_cache: yes
     state: present
 
