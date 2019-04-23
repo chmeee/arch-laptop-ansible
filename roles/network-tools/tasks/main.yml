@@ -36,6 +36,7 @@
       - apache-tools
       - ubridge
       - bing
+      - termshark
     # - dynamips 
     # - gns3-server # conflict of python libraries
     # - gns3-gui
