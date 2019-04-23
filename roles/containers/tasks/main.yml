@@ -38,6 +38,7 @@
       - kubectl-bin
       - kubernetes-helm-bin
       - kops-bin
+      - kubeval
       - minikube
       - kubectx
       - k9s-bin
