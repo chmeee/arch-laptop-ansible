@@ -10,6 +10,7 @@
       - ruby-irb
       - rubygems
       - jruby
+      - python-pip
       - ipython
       - jupyter
       - rust
