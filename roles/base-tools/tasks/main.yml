@@ -57,5 +57,6 @@
       - stapler
       - pdftk-bin
       - impressive
+      - ffsend-bin
     state: present
   become: false
