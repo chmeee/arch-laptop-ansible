@@ -24,7 +24,7 @@ JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 PAGER=/usr/bin/less
 
 # The obstacle is the path
-PATH=~/bin:/home/{{ laptop_user }}/.gem/ruby/2.6.0/bin:$PATH
+PATH=~/bin:~/.gem/ruby/2.6.0/bin:$PATH
 
 # Randomfile
 RANDFILE=~/.rnd
@@ -61,7 +61,7 @@ alias ipa='echo wlp2s0 enp3s0f2 | xargs -n1 ip a l dev'
 
 # Env variables for programming languages
 RUBYOPT="rubygems"
-GOPATH=~/Personal/proyectos/go
+GOPATH=~/personal/proyectos/go
 OS_OUTPUT_GOPATH=1
 PATH=$PATH:$GOPATH/bin
 

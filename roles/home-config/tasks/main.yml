@@ -48,7 +48,7 @@
     - .ssh
 
 - name: copy dot-files
-  template:
+  copy:
     src: "{{ item }}"
     dest: "/home/{{ laptop_user }}/.{{ item }}"
     owner: "{{ laptop_user }}"
