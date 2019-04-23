@@ -10,7 +10,7 @@
   yay:
     name:
       - google-cloud-sdk
-      - python-azure-cli
+      - python-azure-git
       - ibmcloud-cli
     state: present
   become: false
