@@ -43,7 +43,7 @@
 
 - name: sudoers config for vagrant plugins
   template:
-    src: sudoers-vagrant_hostmanager2
+    src: sudoers-vagrant_hostmanager2.j2
     dest: /etc/sudoers.d/vagrant_hostmanager2
     owner: root
     group: root
