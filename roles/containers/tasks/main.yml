@@ -38,12 +38,14 @@
       - kubectl-bin
       - kubernetes-helm-bin
       - kops-bin
-      - kubeval
+      - kubeval-bin
       - minikube
       - kubectx
       - k9s-bin
       - origin-client-bin
       - minishift-bin
+      - kubespy
+      - stern-bin
     state: present
   become: false
 
