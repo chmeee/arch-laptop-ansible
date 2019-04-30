@@ -57,5 +57,5 @@
     group: "{{ laptop_user }}"
     mode: 0755
   loop:
-    - misc/torrents
+    - misc/torrents/.session
     - downloads/torrents
