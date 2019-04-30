@@ -40,7 +40,6 @@
     when: item not in vagrant_plugins.stdout_lines
   become_user: "{{ laptop_user }}"
 
-
 - name: sudoers config for vagrant plugins
   template:
     src: sudoers-vagrant_hostmanager2.j2
