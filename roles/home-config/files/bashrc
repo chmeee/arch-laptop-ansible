@@ -61,7 +61,7 @@ alias ipa='echo wlp2s0 enp3s0f2 | xargs -n1 ip a l dev'
 
 # Env variables for programming languages
 RUBYOPT="rubygems"
-GOPATH=~/personal/proyectos/go
+GOPATH=~/personal/projects/go
 OS_OUTPUT_GOPATH=1
 PATH=$PATH:$GOPATH/bin
 
