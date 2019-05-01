@@ -29,6 +29,12 @@
       - sshuttle
     state: present
 
+- name: add laptop_user to the docker group
+  user:
+    name: "{{ laptop_user }}"
+    groups: wireshark
+    append: yes
+
 - name: install network tools from AUR
   yay: 
     name:
