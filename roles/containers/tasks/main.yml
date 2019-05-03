@@ -46,6 +46,7 @@
       - minishift-bin
       - kubespy
       - stern-bin
+      - sops
     state: present
   become: false
 
