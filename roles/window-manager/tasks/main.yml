@@ -13,6 +13,7 @@
       - swaylock
       - wl-clipboard 
       - grim
+      - slurp
     state: present
 
 - name: create sway/i3 config directories
