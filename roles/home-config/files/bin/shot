@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+FILENAME=$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+
+if [[ $# == 1 ]]; then
+  FILENAME=$1
+fi
+
+slurp | grim -g - ./$FILENAME
