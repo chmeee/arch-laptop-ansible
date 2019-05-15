@@ -38,6 +38,7 @@
       - audio-recorder
       - mp3gain
       - yed
+      - zoom
     state: present
   become: false
 
