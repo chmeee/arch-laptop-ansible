@@ -30,7 +30,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -171,7 +171,7 @@ bindsym $mod+n exec pkill recordmydesktop
 
 
 # Assignments
-assign [class="^xterm$"] "1:terms"
+assign [app_id="termite"] "1:terms"
 assign [class="^Chromium$"] "2:web"
 assign [class="^Google-chrome-beta$"] "2:web"
 assign [class="^Firefox$"] "2:web"
