@@ -6,4 +6,4 @@ if [[ $# == 1 ]]; then
   FILENAME=$1
 fi
 
-slurp | grim -g - ./$FILENAME
+slurp | grim -g - $FILENAME
