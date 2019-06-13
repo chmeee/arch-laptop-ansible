@@ -83,3 +83,19 @@
       for _a in $(sed '/^alias /!d;s/^alias //;s/=.*$//' ~/.kubectl-aliases); do
         complete -F _complete_alias "$_a"
       done
+
+- name: ensure minikube config home dir is present
+  file:
+    path: "/home/{{ laptop_user }}/.minikube/config/"
+    state: directory
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0755
+
+- name: add minikube config.json
+  copy:
+    src: minikube-config.json
+    dest: "/home/{{ laptop_user }}/.minikube/config/config.json"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0644

@@ -1,0 +1,10 @@
+{
+    "dashboard": true,
+    "memory": 4096,
+    "cpus": 4,
+    "disk-size": "10G",
+    "vm-driver": "kvm2",
+    "ingress": true,
+    "addon-manager": true,
+    "efk": true
+}
