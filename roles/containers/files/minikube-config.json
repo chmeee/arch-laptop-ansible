@@ -6,5 +6,5 @@
     "vm-driver": "kvm2",
     "ingress": true,
     "addon-manager": true,
-    "efk": true
+    "efk": false
 }
