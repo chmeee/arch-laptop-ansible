@@ -64,7 +64,7 @@
     name:
       - ttf-bitstream-vera
       - ttf-dejavu
-      - ttf-freefont
+      - gnu-free-fonts
       - ttf-hanazono
       - ttf-inconsolata
       - ttf-liberation
