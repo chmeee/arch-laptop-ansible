@@ -1,0 +1,15 @@
+---
+# tasks file for maker-tools
+- name: install qt packages needed
+  pacman:
+    name:
+      - qt5-base
+      - qt5-websockets
+      - qt5-serialport
+    state: present
+
+- name: get bitbloq qssweb2board source code
+  git:
+    repo: https://github.com/Bitbloq/QSSWeb2Board.git
+    dest: "/home/{{ laptop_user }}/software/zowi/"
+  become: false
