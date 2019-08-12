@@ -49,6 +49,7 @@
       - stern-bin
       - sops
       - kind-bin
+      - kubefedctl
     state: present
   become: false
 
