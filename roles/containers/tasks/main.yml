@@ -48,6 +48,7 @@
       - kubespy
       - stern-bin
       - sops
+      - kind-bin
     state: present
   become: false
 
