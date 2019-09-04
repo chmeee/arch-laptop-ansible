@@ -50,7 +50,7 @@
       - sops
       - kind-bin
       - kubefedctl
-      - istioctl
+      - istio-bin
     state: present
   become: false
 
