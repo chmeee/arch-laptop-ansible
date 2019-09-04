@@ -102,3 +102,8 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 # Kubernetes related config
 PATH=$PATH:~/.krew/bin
 export PATH
+
+# Config for GPG agent
+GPG_TTY=$(tty)
+export GPG_TTY
+
