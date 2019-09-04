@@ -37,7 +37,7 @@
     - projects
     - sales/presentations
 
-- name: create .ssh directory structure
+- name: create some dot directories structure
   file:
     path: "/home/{{ laptop_user }}/{{ item }}"
     state: directory
@@ -46,6 +46,17 @@
     mode: 0700
   loop:
     - .ssh
+    - .gnupg
+
+- name: copy gpg-agent config file
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ laptop_user }}/.gnupg/{{ item }}"
+    owner: "{{ laptop_user }}"
+    group: "{{ laptop_user }}"
+    mode: 0640
+  loop:
+    - gpg-agent.conf
 
 - name: copy dot-files
   copy:
