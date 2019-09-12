@@ -18,7 +18,7 @@ DATE=$(date +%Y.%m.%d)
 EDITOR=/usr/bin/vim
 
 # Everyone needs a home, even Java
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+JAVA_HOME=/usr/lib/jvm/java-12-openjdk
 
 # Less is more
 PAGER=/usr/bin/less
@@ -62,8 +62,9 @@ alias ipa='echo wlp2s0 enp3s0f2 | xargs -n1 ip a l dev'
 # Env variables for programming languages
 RUBYOPT="rubygems"
 GOPATH=~/personal/projects/go
+CARGOPATH=~/.cargo/
 OS_OUTPUT_GOPATH=1
-PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$GOPATH/bin:$CARGOPATH/bin
 
 export RUBYOPT GOPATH OS_OUTPUT_GOPATH PATH
 
