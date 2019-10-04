@@ -28,4 +28,4 @@
   loop:
     - puppet_litmus
     - rspec-puppet
-    - inspec
+    - inspec-bin
