@@ -5,6 +5,7 @@
     name:
       - gcc
       - go
+      - go-tools
       - clojure
       - ruby
       - ruby-irb
