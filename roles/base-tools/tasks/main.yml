@@ -18,10 +18,11 @@
       - p7zip
       - afpfs-ng
       - bc
+      - bat
+      - ripgrep
       - cowsay
       - jq
       - xmlstarlet
-      - sl
       - lsof
       - sl
       - dosfstools
