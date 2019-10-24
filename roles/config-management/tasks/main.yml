@@ -19,6 +19,7 @@
       - pdk
       - openpolicyagent-bin
    #  - conftest
+      - terrahelp
     state: present
   become: false
 
