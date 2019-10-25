@@ -20,6 +20,7 @@
       - openpolicyagent-bin
    #  - conftest
       - terrahelp
+      - terragrunt-bin
     state: present
   become: false
 
