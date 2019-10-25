@@ -100,6 +100,7 @@
 - name: set timezone to Europe/Madrid
   timezone:
     name: Europe/Madrid
+  when: ansible_facts['date_time']['tz'] == "UTC"
 
 - name: enable and start openntpd
   service:
