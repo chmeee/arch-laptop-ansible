@@ -21,6 +21,7 @@
    #  - conftest
       - terrahelp
       - terragrunt-bin
+      - pulumi-bin
     state: present
   become: false
 
