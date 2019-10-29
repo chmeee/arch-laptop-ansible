@@ -59,7 +59,7 @@
 
 - name: add kubectl aliases file
   get_url:
-    url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl-aliases
+    url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases
     dest: "/home/{{ laptop_user }}/.kubectl-aliases"
     mode: 0466
 
