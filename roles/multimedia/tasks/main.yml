@@ -37,6 +37,7 @@
     name:
       - audio-recorder
       - mp3gain
+      - popcorntime-bin
       - yed
       - zoom
     state: present
