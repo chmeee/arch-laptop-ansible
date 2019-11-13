@@ -29,6 +29,8 @@
       - mtools
       - smbclient
       - putty
+      - pass
+      - qrencode
       - rdesktop
       - freerdp
     # - winexe
