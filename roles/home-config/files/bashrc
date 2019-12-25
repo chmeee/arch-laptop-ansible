@@ -18,7 +18,7 @@ DATE=$(date +%Y.%m.%d)
 EDITOR=/usr/bin/vim
 
 # Everyone needs a home, even Java
-JAVA_HOME=/usr/lib/jvm/java-12-openjdk
+JAVA_HOME=/usr/lib/jvm/java-13-openjdk
 
 # Less is more
 PAGER=/usr/bin/less
