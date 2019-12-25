@@ -27,6 +27,7 @@
       - openldap
       - tcpdump
       - sshuttle
+      - dhclient
     state: present
 
 - name: add laptop_user to the docker group
