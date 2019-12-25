@@ -4,7 +4,7 @@
   pacman:
     name:
       - gcc
-      - go
+      - go-pie
       - go-tools
       - clojure
       - ruby
