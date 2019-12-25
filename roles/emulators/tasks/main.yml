@@ -1,0 +1,8 @@
+---
+# tasks file for emulators
+- name: install emulator packages
+  yay:
+    name:
+      - android-sdk
+    state: present
+  become: false
