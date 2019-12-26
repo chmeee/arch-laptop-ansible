@@ -19,6 +19,7 @@ EDITOR=/usr/bin/vim
 
 # Everyone needs a home, even Java
 JAVA_HOME=/usr/lib/jvm/java-13-openjdk
+_JAVA_AWT_WM_NONREPARENTING=1
 
 # Less is more
 PAGER=/usr/bin/less
@@ -29,7 +30,7 @@ PATH=~/bin:~/.gem/ruby/2.6.0/bin:$PATH
 # Randomfile
 RANDFILE=~/.rnd
 
-export DATE EDITOR JAVA_HOME PATH PAGER RANDFILE
+export DATE EDITOR JAVA_HOME _JAVA_AWT_WM_NONREPARENTING PATH PAGER RANDFILE
 
 # Launch ssh-agent if it's not running
 
