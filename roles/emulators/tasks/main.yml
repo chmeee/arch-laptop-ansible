@@ -4,5 +4,6 @@
   yay:
     name:
       - android-sdk
+      - android-studio
     state: present
   become: false
