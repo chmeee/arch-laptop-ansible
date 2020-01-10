@@ -30,6 +30,7 @@
       - recordmydesktop
       - rtmpdump
       - cdparanoia
+      - mtpfs
     state: present
 
 - name: install multimedia packages from AUR

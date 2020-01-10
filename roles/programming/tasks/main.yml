@@ -43,8 +43,8 @@
   become: false
 
 - name: copy global gitconfig file
-  copy:
-    src: gitconfig
+  template:
+    src: gitconfig.j2
     dest: "/home/{{ laptop_user }}/.gitconfig"
     owner: "{{ laptop_user }}"
     group: "{{ laptop_user }}"
