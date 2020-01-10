@@ -9,6 +9,7 @@
       - runc
       - containerd
       - skopeo
+      - podman
     state: present
 
 - name: enable and start docker service
@@ -71,13 +72,13 @@
 - name: install script to ensure alias are tab-completed
   get_url:
     url: https://raw.githubusercontent.com/cykerway/complete-alias/master/bash_completion.sh
-    dest: "/home/{{ laptop_user }}/bin/bash_completion.sh"
+    dest: "/home/{{ laptop_user }}/.bash_completion"
     mode: 0466
 
-- name: ensure bash_completion.sh is sourced in .bashrc
-  lineinfile:
-    path: "/home/{{ laptop_user }}/.bashrc"
-    line: "source ~/bin/bash_completion.sh"
+# - name: ensure bash_completion.sh is sourced in .bashrc
+#   lineinfile:
+#     path: "/home/{{ laptop_user }}/.bashrc"
+#     line: "source ~/bin/bash_completion.sh"
 
 - name: add kubectl aliases to be tab-completed
   blockinfile:
