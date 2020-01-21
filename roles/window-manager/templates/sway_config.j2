@@ -98,9 +98,9 @@ bindsym $mod+a focus parent
 workspace "1:terms" output LVDS-1
 workspace "2:web" output VGA-1
 #workspace "2:web" output HDMI-1
-workspace "3:virtual" output VGA-1
+workspace "3:virtual" output LVDS-1
 #workspace "3:virtual" output HDMI-1
-workspace "4:docs" output LVDS-1
+workspace "4:docs" output VGA-1
 workspace "5:video" output LVDS-1
 
 # switch to workspace
@@ -183,6 +183,7 @@ assign [class="^Bluejeans$"] "5:video"
 assign [class="^Forticlientsslvpn$"] "9:vpn"
 assign [class="^com-yworks-A-B$"] "6:graph"
 assign [class="^.*impresive.*$"] "2:web"
+assign [app_id="^libreoffice.*$"] "4:docs"
 
 # Floating mode by default
 # for_window [class="^VirtualBox$"] floating enable
