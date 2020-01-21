@@ -71,7 +71,7 @@
 
 - name: install script to ensure alias are tab-completed
   get_url:
-    url: https://raw.githubusercontent.com/cykerway/complete-alias/master/bash_completion.sh
+    url: https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias
     dest: "/home/{{ laptop_user }}/.bash_completion"
     mode: 0466
 
